@@ -10,6 +10,18 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.2.1"
-  }
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KumariAnjali8/Babyshark_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KumariAnjali8/Babyshark_backend/issues"
+  },
+  "homepage": "https://github.com/KumariAnjali8/Babyshark_backend#readme"
 }
