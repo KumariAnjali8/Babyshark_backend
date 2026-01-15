@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import fetch from "node-fetch"; // needed if Node < 18
+import fetch from "node-fetch";
 
 dotenv.config();
 
@@ -33,12 +33,14 @@ app.post("/api/generate", async (req, res) => {
           messages: [
             {
               role: "system",
-              content: "You are a startup planner. You ONLY return valid JSON."
+              content:
+                "You are a startup advisor. You MUST return only valid JSON, no text."
             },
             {
               role: "user",
               content: `
 Return ONLY JSON in this exact format:
+
 {
   "roadmap": [
     { "step": 1, "title": "string", "description": "string" }
@@ -46,7 +48,9 @@ Return ONLY JSON in this exact format:
   "pitch": {
     "short": "string",
     "long": "string"
-  }
+  },
+  "licenses": ["string"],
+  "planner": ["string"]
 }
 
 Startup idea:
@@ -77,6 +81,7 @@ ${idea}
     }
 
     console.log("FINAL AI RESPONSE:", structured);
+
     res.json(structured);
 
   } catch (err) {
